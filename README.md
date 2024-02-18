@@ -17,7 +17,12 @@ Q-1)Declare a calendar as an array of 7 ement's to represent 7 days of a weeks. 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//Q-2)fdgghgdghdggghdgdfdgdfgd
+//Q-2)Design and implement a Program in c for the following operations on strings.
+//i) read a string 
+//ii) read a Paltem string (PTR) 
+//iii) read a replacement string (REP) Perform Patter mana-
+//ging operations find and replace all occurance's Pattern string in the main sting with the replacement string. report suitable message in case pattern string not exist
+
 #include<stdio.h>
 #include<string.h>
 int main()
@@ -186,6 +191,7 @@ return 0;
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //Q-4)Design, develop and implement a Program in c for Converting an infix expression to Postfix expression Program should oom for both paren theses and non Parenthesre with operators +,-,*,/,%, along cuith alpha //numeric operations.
+
 #include<stdio.h>
 #include<string.h>
 #include<conio.h>
@@ -257,6 +263,7 @@ getch();
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //Q-5)Develop and implement a program in c for counting an infix expression to Prefix expression Program should with for both Paranchaled and non partanthesis expression with operation '+','-','','/','%'& pow() operators //along with alphanumeric operands.
+
 #include<stdio.h>
 #include<math.h>
 #include<string.h>
@@ -315,6 +322,7 @@ int main()
 //b) delete an exement from a caraular queue demonstrate overflow and underflow situations. on cardar queue
 //d). display the states of Grcular queue
 //e) exit
+
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
