@@ -14,9 +14,64 @@ Q-1)Declare a calendar as an array of 7 ement's to represent 7 days of a weeks. 
 1) Name of the day
 2) Date of the day
 3) Description of the activity for particular day.
+#include<stdio.h>
+#include<string.h>
+//difine a structer to represnt a day
+struct Day{
+int date;
+char activity[100];
+};
+//function to creat the calender
+void creat(struct Day calender[7]){
+for(int i=0;i<7;i++){
+printf("Enter detel for %\n",calender[i].name);
+printf("Date:");
+scanf("%d",&calender[i].date);
+printf("Activity:");
+scanf("%[\n]",calender[i].activity);
+}
+}
+//function to read data from the keyboard
+voi read(struct Day calender[7]0{
+fILE*file=fopen("calender.txt","r");
+if(file=NULL){
+printf("Error opening the file./n");
+return;
+}
+for(int i =0;i<7;i++){
+printf("%s(date:%d):%s\n",calender[i].name,calender[i].date/calender[i].activity);
+}
+}
+int main(){
+struct Day calender[7];
+   Initialize the names of the days
+   strcpy calender[0].name,"Monday");
+   strcpy calender[1].name,"tuesday");
+   strcpy calender[2].name,"wednesday");
+   strcpy calender[3].name,"thursday");
+   strcpy calender[4].name,"friday");
+   strcpy calender[5].name,"saturday");
+   strcpy calender[6].name,"sunday");
+   int choice;
+   printf("1.creat calender\N");
+   printf("2Read calender from File\n");
+   printf("Enter your choice:);
+   scanf("%d',&choice);
+   switch(choice0[
+   case 1:
+   creat(calender);
+   break;
+   case 2;
+   read(calender);
+   break:
+   defult:
+   printf("Invalid choice.\n");
+   return 0;
+   }
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+   
 //Q-2)Design and implement a Program in c for the following operations on strings.
 //i) read a string 
 //ii) read a Paltem string (PTR) 
