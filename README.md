@@ -17,7 +17,7 @@ Q-1)Declare a calendar as an array of 7 ement's to represent 7 days of a weeks. 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//Q-2)
+//Q-2)fdgghgdghdggghdgdfdgdfgd
 #include<stdio.h>
 #include<string.h>
 int main()
