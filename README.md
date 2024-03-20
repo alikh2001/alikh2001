@@ -461,3 +461,487 @@ default:printf("Invalid choice");
 }
 return 0;
 }
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7.	singly linklist
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+typedef struct node {
+    int usn;
+    char name[20];
+    char branch[20];
+    int semester;
+    char phone[20];
+    struct node *link;
+} NODE;
+
+NODE* getnode() {
+    NODE* X = malloc(sizeof(NODE)); 
+    if (X == NULL) {
+printf("out of memory\n");
+exit(0);
+    }
+    return X;
+}
+
+NODE* insert_front(int usn, char name[], char branch[], int semester, char phone[], NODE* first) {
+    NODE* temp = getnode();
+    temp->usn = usn;
+strcpy(temp->name, name);
+strcpy(temp->branch, branch);
+    temp->semester = semester;
+strcpy(temp->phone, phone);
+    temp->link = first;
+    return temp;
+}
+
+NODE* insert_rear(int usn, char name[], char branch[], int semester, char phone[], NODE* first) {
+    NODE* temp = getnode();
+    temp->usn = usn;
+strcpy(temp->name, name);
+strcpy(temp->branch, branch);
+    temp->semester = semester;
+strcpy(temp->phone, phone);
+    temp->link = NULL;
+    if (first == NULL)
+        return temp;
+    NODE* cur = first;
+    while (cur->link != NULL) 
+        cur = cur->link;
+    cur->link = temp;
+    return first;
+}
+
+NODE* delete_front(NODE* first) {
+    if (first == NULL) {
+printf("student list is empty\n");
+        return NULL;
+    }
+    NODE* temp = first;
+printf("delete student record: USN=%d\n", temp->usn);
+    first = first->link;
+    free(temp);
+    return first;
+}
+
+NODE* delete_rear(NODE* first) {
+    if (first == NULL) {
+printf("student list is empty\n");
+        return NULL;
+    }
+    NODE* cur = first;
+    NODE* prev = NULL;
+    while (cur->link != NULL) {
+prev = cur;
+        cur = cur->link;
+    }
+printf("delete student record: USN=%d\n", cur->usn);
+    if (prev == NULL)
+        first = NULL;
+    else
+prev->link = NULL;
+    free(cur);
+    return first;
+}
+
+void display(NODE* first) {
+    int count = 0;
+    if (first == NULL) {
+printf("student list is empty\n");
+        return;
+    }
+    NODE* cur = first;
+    while (cur != NULL) {
+printf("%d\t%s\t%s\t%d\t%s\n", cur->usn, cur->name, cur->branch, cur->semester, cur->phone);
+        cur = cur->link;
+        count++;
+    }
+printf("number of students=%d\n", count);
+}
+
+name, branch, int main() {
+    NODE* first = NULL;
+    int choice, usn, semester;
+    char name[20], branch[20], phone[20];
+    while (1) {
+printf("1.insert_front 2.insert_rear 3.delete_front 4.delete_rear 5.display 6.exit\n");
+printf("Enter the choice: ");
+scanf("%d", &choice);
+        switch (choice) {
+            case 1:
+printf("USN: "); scanf("%d", &usn);
+printf("Name: "); scanf("%s", name);
+printf("Branch: "); scanf("%s", branch);
+printf("Semester: "); scanf("%d", &semester);
+printf("Phone: "); scanf("%s", phone);
+                first = insert_front(usn, name, branch, semester, phone, first);
+                break;
+            case 2:
+printf("USN: "); scanf("%d", &usn);
+printf("Name: "); scanf("%s", name);
+printf("Branch: "); scanf("%s", branch);
+printf("Semester: "); scanf("%d", &semester);
+printf("Phone: "); scanf("%s", phone);
+                first = insert_rear(usn, semester, phone, first);
+                break;
+            case 3:
+                first = delete_front(first);
+                break;
+            case 4:
+                first = delete_rear(first);
+                break;
+            case 5:
+                display(first);
+                break;
+            case 6:
+exit(0);
+            default:
+printf("Invalid choice\n");
+        }        }
+    return 0;
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+8  doubly linked list
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct Enode {
+    char ssn[50];
+    char name[20];
+    char dept[5];
+    char destination[10];
+    int salary;
+    int phno;
+    struct Enode *next;
+};
+
+struct Enode *head = NULL, *tail = NULL;
+
+void create(char[], char[], char[], char[], int, int);
+void display();
+void insert(char[], char[], char[], char[], int, int, int);
+void delete(int);
+
+int main() {
+    int choice;
+    char s[15], n[20], dpt[5], des[10];
+    int sal, p;
+
+printf("1. Create\n2. Display\n3. Insert at beginning\n4. Insert at end\n5. Delete at beginning\n6. Delete at end\n7. Exit\n");
+
+    while (1) {
+printf("\nEnter your choice: ");
+scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+printf("Enter the required data (emp no, name, dept, desig, sal, phone): ");
+scanf("%s%s%s%s%d%d", s, n, dpt, des, &sal, &p);
+create(s, n, dpt, des, sal, p);
+                break;
+            case 2:
+display();
+                break;
+            case 3:
+            case 4:
+printf("Enter the required data (emp no, name, dept, desig, sal, phone): ");
+scanf("%s%s%s%s%d%d", s, n, dpt, des, &sal, &p);
+insert(s, n, dpt, des, sal, p, choice);
+                break;
+            case 5:
+            case 6:
+                delete(choice);
+                break;
+            case 7:
+exit(0);
+            default:
+printf("Invalid choice!\n");
+        }     }
+    return 0;    }
+
+void create(char s[], char n[], char dpt[], char des[], int sal, int p) {
+    struct Enode *newNode = (struct Enode*)malloc(sizeof(struct Enode));
+strcpy(newNode->ssn, s);
+strcpy(newNode->name, n);
+strcpy(newNode->dept, dpt);
+strcpy(newNode->destination, des);
+newNode->salary = sal;
+newNode->phno = p;
+newNode->next = NULL;
+
+    if (head == NULL) {
+        head = newNode;
+        tail = newNode;
+    } else {
+        tail->next = newNode;
+	        tail = newNode;
+    }     }
+
+void display() {
+    struct Enode *temp = head;
+printf("Employee details:\n");
+    while (temp != NULL) {
+printf("%s\t%s\t%s\t%s\t%d\t%d\n", temp->ssn, temp->name, temp->dept, temp->destination, temp->salary, temp->phno);
+        temp = temp->next;
+    }    }
+
+void insert(char s[], char n[], char dpt[], char des[], int sal, int p, int choice) {
+    struct Enode *newNode = (struct Enode*)malloc(sizeof(struct Enode));
+strcpy(newNode->ssn, s);
+strcpy(newNode->name, n);
+strcpy(newNode->dept, dpt);
+strcpy(newNode->destination, des);
+newNode->salary = sal;
+newNode->phno = p;
+newNode->next = NULL;
+
+    if (choice == 3) {
+newNode->next = head;
+        head = newNode;
+    } else if (choice == 4) {
+        tail->next = newNode;
+        tail = newNode;
+    }   }
+
+void delete(int choice) {
+    if (head == NULL)
+        return;
+
+    struct Enode *temp = head;
+    if (choice == 5) {
+        head = head->next;
+        free(temp);
+    } else if (choice == 6) {
+        if (head == tail) {
+            free(head);
+            head = NULL;
+            tail = NULL;
+            return;
+        }
+
+        while (temp->next != tail) {
+            temp = temp->next;
+            }
+        free(tail);
+        tail = temp;
+        tail->next = NULL;
+    }     }
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+10  Binary search tree
+#include <stdio.h>
+#include <stdlib.h>
+
+struct BST {
+    int data;
+    struct BST *lchild;
+    struct BST *rchild;
+};
+
+typedef struct BST *NODE;
+
+NODE create(int value) {
+    NODE temp = malloc(sizeof(struct BST));
+    temp->data = value;
+    temp->lchild = NULL;
+    temp->rchild = NULL;
+    return temp;
+}
+
+void insert(NODE root, int value) {
+    if (value < root->data) {
+        if (root->lchild == NULL)
+            root->lchild = create(value);
+        else
+            insert(root->lchild, value);
+    } else {
+        if (root->rchild == NULL)
+            root->rchild = create(value);
+        else
+            insert(root->rchild, value);
+    }   }
+
+void search(NODE root, int key) {
+    while (root != NULL && root->data != key) {
+        if (key < root->data)
+            root = root->lchild;
+        else
+            root = root->rchild; }
+
+    if (root == NULL)
+printf("\nKey element is not found in the BST");
+    else
+printf("\nKey element is present in BST");}
+
+void inorder(NODE root) {
+    if (root != NULL) {
+inorder(root->lchild);
+printf("%d ", root->data);
+inorder(root->rchild); }}
+
+int main() {
+    int ch, key, i, n, value;
+    NODE root = NULL;
+    while (1) {
+printf("\n---BST MENU---");
+printf("\n1.Create a BST");
+printf("\n2.Inorder Traversal");
+printf("\n3.Search");
+printf("\n4.Exit");
+printf("\nEnter your choice: ");
+scanf("%d", &ch);
+        switch (ch) {
+            case 1:
+printf("\nEnter the number of elements: ");
+scanf("%d", &n);
+printf("Enter elements:\n");
+                for (i = 0; i < n; i++) {
+scanf("%d", &value);
+                    if (root == NULL)
+                        root = create(value);
+                    else
+insert(root, value);
+                }
+                break;
+            case 2:
+                if (root == NULL)
+printf("\nTree Is Not Created");
+                else {
+printf("\nInorder display: ");
+inorder(root);  }
+                break;
+            case 3:
+                if (root == NULL)
+printf("\nTree Is Not Created");
+                else {
+printf("\nEnter the element to search: ");
+scanf("%d", &key);
+search(root, key);
+                }
+                break;
+            case 4:
+exit(0);
+            default:
+printf("\nPlease enter valid choice:");
+        }     }
+    return 0;}
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+11   Graph of cities
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX 50
+
+int a[MAX][MAX], n, visited[MAX];
+int q[MAX], front = -1, rear = -1;
+int s[MAX], top = -1, count = 0;
+
+void bfs(int v) {
+    visited[v] = 1;
+    q[++rear] = v;
+    while (front != rear) {
+        int cur = q[++front];
+        for (int i = 1; i <= n; i++) {
+            if (a[cur][i] == 1 && visited[i] == 0) {
+                q[++rear] = i;
+                visited[i] = 1;
+printf("%d ", i);
+            } }   }    }
+
+void dfs(int v) {
+    visited[v] = 1;
+    s[++top] = v;
+    for (int i = 1; i <= n; i++) {
+   if (a[v][i] == 1 && visited[i] == 0) {
+printf("%d ", i);
+dfs(i); }   }    }
+
+int main() {
+    int ch, start;
+printf("\nEnter the number of vertices in graph: ");
+scanf("%d", &n);
+printf("\nEnter the adjacency matrix:\n");
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+scanf("%d", &a[i][j]);
+        }   }
+    for (int i = 1; i <= n; i++) visited[i] = 0;
+printf("\nEnter the starting vertex: ");
+scanf("%d", &start);
+printf("\n1. BFS: Print all nodes reachable from a given starting node");
+printf("\n2. DFS: Print all nodes reachable from a given starting node");
+printf("\n3. Exit"); 
+printf("\nEnter your choice: ");
+scanf("%d", &ch);
+switch(ch) {
+        case 1:
+printf("\nNodes reachable from starting vertex %d are: ", start);
+bfs(start);
+            for (int i = 1; i <= n; i++) {
+                if (visited[i] == 0) printf("\nThe vertex that is not reachable is %d", i);
+            }
+            break;
+        case 2:
+printf("\nNodes reachable from starting vertex %d are:\n", start);
+dfs(start);
+            break;
+        case 3:
+exit(0);
+        default:
+printf("\nPlease enter a valid choice.");
+    }
+    return 0;}
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+12 Employee hash table
+#include<stdio.h>
+#include<stdlib.h>
+int n, m, count = 0;
+int *ht;
+
+void insert(int key) {
+    int index = key % m;
+    while (ht[index] != -1) index = (index + 1) % m;
+ht[index] = key;
+    count++;}
+
+void display() {
+printf("\nHash Table contents are:\n");
+    for (int i = 0; i < m; i++) printf("T[%d] --> %d\n", i, ht[i]);}
+
+int main() {
+printf("\nEnter the number of employee records (N): ");
+scanf("%d", &n);
+printf("\nEnter the two-digit memory locations (m) for hash table: ");
+scanf("%d", &m);
+ht = (int*)malloc(m * sizeof(int));
+    for (int i = 0; i < m; i++) ht[i] = -1;
+printf("\nEnter the four-digit key values (K) for %d Employee Records: \n", n);
+    for (int i = 0; i < n; i++) {
+        int key;
+scanf("%d", &key);
+        if (count == m) {
+printf("\nHash table is full. Cannot insert the record %d key", i + 1);
+break; }
+        insert(key); }
+display();
+    return 0;}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
