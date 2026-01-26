@@ -1,10 +1,6 @@
 <div align="center">
-<p align="center">
-  <img src="https://raw.githubusercontent.com/alikh2001/alikh2001/main/assets/banner.png" width="100%" alt="Divansab Banner"/>
-</p>
-
+<img src="https://img.shields.io/badge/Divansab%20Harakuni-1E3A8A?style=for-the-badge&logo=dev.to&logoColor=ffffff&labelColor=0C4A6E&colorStart=1E40AF&colorMiddle=3B82F6&colorEnd=1D4ED8" alt="Divansab Harakuni" width="100%" style="margin: 5px 0; max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(30,58,138,0.3);"/>
 </div
-
 <h1 align="center">Hi 👋 I'm Divansab</h1>
 <h3 align="center">Computer Science Student | Full Stack Developer</h3>
 
