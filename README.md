@@ -1,6 +1,9 @@
+<div align="center">
 <p align="center">
-  <img src="./assets/banner.png" width="100%" alt="Divansab Banner"/>
+  <img src="https://raw.githubusercontent.com/alikh2001/alikh2001/main/assets/banner.png" width="100%" alt="Divansab Banner"/>
 </p>
+
+</div
 
 <h1 align="center">Hi 👋 I'm Divansab</h1>
 <h3 align="center">Computer Science Student | Full Stack Developer</h3>
