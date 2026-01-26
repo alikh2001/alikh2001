@@ -13,11 +13,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout repo so action can push
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      # Checkout repo
+      - uses: actions/checkout@v3
 
-      # Generate snake
+      # Set Git user (important fix)
+      - name: Setup Git
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+      # Generate snake animation
       - name: Generate snake animation
         uses: Platane/snk@v3
         with:
