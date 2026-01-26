@@ -1,6 +1,9 @@
 <div align="center">
 <img src="https://img.shields.io/badge/Divansab%20Harakuni-1E3A8A?style=for-the-badge&logo=dev.to&logoColor=ffffff&labelColor=0C4A6E&colorStart=1E40AF&colorMiddle=3B82F6&colorEnd=1D4ED8" alt="Divansab Harakuni" width="100%" style="margin: 5px 0; max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(30,58,138,0.3);"/>
 </div>
+<h1 align="center">Hi 👋 I'm Divansab</h1>
+<h3 align="center">Computer Science Student | Full Stack Developer</h3>
+
 
 # 💫 About Me:
 🔭 I'm currently working on **Dynamic Web Applications**  
@@ -46,5 +49,13 @@
 ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white) 
 ![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white) 
 ![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=android-studio&logoColor=black)
+
+## 📊 GitHub Stats
+
+![Ali's GitHub Stats](https://github-readme-stats.vercel.app/api?username=alikh2001&show_icons=true&theme=radical&hide_border=true)
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=alikh2001&theme=radical&hide_border=true)
+
+![Snake animation](https://raw.githubusercontent.com/alikh2001/alikh2001/output/github-contribution-grid-snake.svg)
+
 
 <!-- Proudly created with GPRM (https://gprm.itsvg.in) -->
