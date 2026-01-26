@@ -10,7 +10,7 @@
 ⚡ **1 cup of coffee for every 2 hours of coding**
 
 ## 🌐 Portfolio
-[![Portfolio](https://img.shields.io/badge/Portfolio-Sayed%20Mirchoni-6366f1?style=for-the-badge&logo=vercel&logoColor=white)](https://personal-portfolio-theta-lilac.vercel.app/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Divansab%20Harakuni-6366f1?style=for-the-badge&logo=vercel&logoColor=white)](https://divan-s-digital-canvas-w397.vercel.app/)
 
 ## 🌐 Socials:
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=instagram&logoColor=white)](https://instagram.com/_.being._.dk._) 
