@@ -52,8 +52,10 @@
 
 ## 📊 GitHub Stats
 
-![Ali's GitHub Stats](https://github-readme-stats.vercel.app/api?username=alikh2001&show_icons=true&theme=radical&hide_border=true)
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=alikh2001&theme=radical&hide_border=true)
+## 📊 GitHub Stats
+
+![Ali's GitHub Stats](https://github-readme-stats.vercel.app/api?username=alikh2001&show_icons=true&theme=radical)
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=alikh2001&theme=radical)
 
 ![Snake animation](https://raw.githubusercontent.com/alikh2001/alikh2001/output/github-contribution-grid-snake.svg)
 
